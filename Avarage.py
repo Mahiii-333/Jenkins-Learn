@@ -1,6 +1,6 @@
 students = []
 
-with open("marks.txt", "r") as file:
+with open("Marks.txt", "r") as file:
     for line in file:
         data = line.strip().split(",")
 
@@ -18,7 +18,7 @@ with open("marks.txt", "r") as file:
 
         students.append(f"{name} - Average: {avg:.2f} - Grade: {grade}")
 
-with open("report.txt", "w") as report:
+with open("Marks.txt", "w") as report:
     for student in students:
         report.write(student + "\n")
 
