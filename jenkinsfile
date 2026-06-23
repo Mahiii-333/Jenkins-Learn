@@ -3,15 +3,20 @@ pipeline {
 
     stages {
 
+    stage('List OF Files'){
+           steps{
+        bat 'dir'
+       }
+}
         stage('Run Program') {
             steps {
-                sh 'python result.py'
+                sh 'python Avarage.py'
             }
         }
 
         stage('Archive Report') {
             steps {
-                archiveArtifacts artifacts: 'report.txt'
+                archiveArtifacts artifacts: 'Marks.txt'
             }
         }
     }
