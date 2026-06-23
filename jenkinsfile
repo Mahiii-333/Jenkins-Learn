@@ -3,12 +3,6 @@ pipeline {
 
     stages {
 
-        stage('cloning the repo') {
-            steps {
-                git 'https://github.com/Mahiii-333/Jenkins-Learn.git'
-            }
-        }
-
         stage('Run Program') {
             steps {
                 sh 'python result.py'
