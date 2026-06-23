@@ -1,0 +1,24 @@
+pipeline {
+    agent any
+
+    stages {
+
+        stage('cloning the repo') {
+            steps {
+                git 'https://github.com/Mahiii-333/Jenkins-Learn.git'
+            }
+        }
+
+        stage('Run Program') {
+            steps {
+                sh 'python result.py'
+            }
+        }
+
+        stage('Archive Report') {
+            steps {
+                archiveArtifacts artifacts: 'report.txt'
+            }
+        }
+    }
+}
